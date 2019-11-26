@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,p{
+    margin: 0;
+    padding: 0;
+}
+html,body,#root,.container{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+img{
+    width: 100%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    .header{
+        height: 50px;
+        display: flex;
+        a{
+            display: block;
+            flex: 1;
+            text-align: center;
+            line-height: 50px;
+            &.active{
+                color:green;
+                border-bottom: 2px solid green;
+            }
+        }
+    }
+    .main{
+        flex:1;
+        overflow: auto;
+        .recommend{
+            width:100%;
+            height: 150px;
+            .banner,.ant-carousel,.slick-slider,.slick-list{
+                height: 100%;
+            }
+
+            .radioList{
+              padding: 0 10px;
+              background-color: #f5f4f7;
+              h2{
+                  line-height: 30px;
+              }
+               .radio{
+                   display: flex;
+                   justify-content: space-between;
+                   .list{
+                       width: 170px;
+                       background-color: #fff;
+                       margin-bottom: 10px;
+                       p{
+                           line-height: 30px;
+                           padding-left: 5px;
+                       }
+                   }
+               }
+            }
+        }
+        .rank {
+            padding: 10px;
+            background-color: #f4f4f4;
+            overflow: hidden;
+            li {
+                display: flex;
+                background-color: #fff;
+                margin-bottom: 10px;
+
+                img {
+                    width: 120px;
+                    height: 120px;
+                }
+
+                .list-item {
+                    flex: 1;
+                    display: flex;
+                    overflow: hidden;
+                    padding-left: 6px;
+
+                    .song-title {
+                        flex: 1;
+                        overflow: hidden;
+
+                        >p {
+                            font-size: 20px;
+                            color: #000;
+                            margin-bottom: 6px;
+                        }
+
+                        span {
+                            color: #666;
+                            font-size: 14px;
+                            margin-right: 6px;
+
+                            &.title {
+                                color: #000;
+                                font-size: 18px;
+                            }
+                        }
+
+                        .song-p {
+                            width: 100%;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            margin: 0;
+                        }
+                    }
+                    .icon-div {
+                        width: 40px;
+                        text-align: center;
+                        line-height: 120px;
+                    }
+                }
+            }
+        }
+        .search{
+            width: 100%;
+            background-color: rgb(244, 244, 244);
+            padding: 10px 20px;
+            margin-bottom: 20px;
+           span{
+               margin-left: 20px;
+           }
+            .masks {
+                position: fixed;
+                width: 260px;
+                top: 100px;
+                left: 40px;
+                li {
+                    list-style: none;
+                    width: 100%;
+                    padding: 20px;
+                    background-color: #ccc;
+                    border: 1px solid green;
+                    .anticon-search {
+                        font-size: 20px;
+                        margin-right: 20px;
+                    }
+                    .anticon-search{
+                        margin-right: 5px;  
+                    }
+                }
+            }
+        }
+    }
+}
+.topList{
+    overflow: hidden;
+    .songHead{
+        padding-top:40px;
+        height: 230px;
+        // background: yellow;
+        text-align: center;
+        font-size: 20px;
+        color: #000;
+        line-height: 35px;
+        .listUpdateTime{
+            font-size: 16px;
+            line-height: 50px;
+            color:rgb(88, 90, 89)
+        }
+        .playbtn{
+            width: 200px;
+            height: 40px;
+            font-size: 30px;
+            background: #22d59c;
+            margin: auto;
+            border-radius: 20px 20px 20px 20px;
+            box-shadow: 0 0 40px 0px #b1f9e4;
+            .anticon-caret-right{
+                color: white;        
+            }
+        }
+        .listRank{
+            text-align: left;
+            font-size: 16px;
+            line-height: 40px;
+            color:rgb(88, 90, 89)
+        }
+       
+    }
+    ul{
+        flex: 1;
+        padding: 15px 10px;
+        li{
+            margin-bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .songIndex{
+                color: red;
+                margin-right: 20px;
+            }
+            .songInfo{
+                flex: 1;
+                display: flex;
+                justify-content: space-between;
+                .song{
+                    .songName{
+                        color:#000;
+                    }
+                }
+                .icon{
+                    width: 40px;
+                }
+            }
+        }
+    }
+    .pullup{
+        color: #000;
+        text-align: center;
+    }
+}
+.play{
+    .lyric-box{
+        position: relative;
+        text-align: center;
+        display: flex;
+        overflow: hidden;
+        height: 500px;
+        .box{
+            position: absolute;
+            top: 150px;
+            width: 100%;
+            text-align: center; 
+            p{
+                line-height: 40px;
+                color: #000;
+                &.active {
+                    color: green;
+                }
+            }  
+        }
+    }
+    .progress-box{
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        span{
+            width: 50px;
+            text-align: center;
+        }
+        .progress{
+            flex: 1;
+            background-color: #ccc;
+            position: relative;
+            .current{
+                width: 0;
+                height: 10px;
+                background-color: green;
+            }
+            .circle{
+                position: absolute;
+                top: -3px;
+                left: -3px;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background-color: green;
+            }
+           
+        }
+        span{
+            margin-left: 5px;
+        }
+    }
+    .btns{
+        margin: 20px 0;
+        padding: 0 100px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        span{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 40px;
+        }
+        .ant-btn{
+            width: 150px;
+        }
+    }
+    .download{
+        margin:0 auto;
+        width: 200px;
+        height: 40px;
+        font-size: 18px;
+        color: #fff;
+        background: #22d59c;
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 0 0 40px 0px #b1f9e4;
+        text-align: center;
+        line-height: 40px;
+    }
+   
+}
